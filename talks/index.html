@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>SNTA 2020 file upload</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<script language="javascript" type="text/javascript">
+<!--
+function youMustAgreePrompt() {
+  window.alert('Sorry, you must acknowledge the note before going to the upload page.');
+ return false;
+}
+function gatekeeper() {
+  console.log('entering function gatekeeper()');
+  var ackBox = document.getElementsByName('ackDisclaimer');
+  if (ackBox[0].checked) {
+    console.log('ackDisclaimer checkbox is checked');
+    return true;
+  }
+  else {
+    console.log('ackDisclaimer checkbox is NOT checked');
+    return youMustAgreePrompt();
+  }
+}
+function toggleParagraph(a){
+var e=document.getElementById(a);
+if(!e)return true;
+if(e.style.display=="none"){
+e.style.display="block"
+}
+else{
+e.style.display="none"
+}
+return true;
+}//-->
+</script>
+</head>
+<body>
+<center><table width=600><tr><td>
+<br>
+<h2>SNTA 2020 file upload</h2>
+
+<p>
+<table style="padding: 2px; margin: 4px">
+<tr> <!--  vertical-align:middle; -->
+<td style="text-align:left; border: 4px double red; padding: 2px;">
+<center>
+   <form>
+    <input type="checkbox" name="ackDisclaimer" value="agreed">&nbsp;&nbsp;
+   </form>
+</center>
+
+<b>By checking this box, you acknowledge that the materials you are about to upload is from you and SNTA workshop use only. <br><br>
+</b>
+
+</td></tr>
+
+<tr><td>
+
+<center>
+<table><tr><td colspan="2">
+<br>
+<h3>Before going to upload page...</h3>
+We need to collect your info. 
+Also, for the verification process for human interaction, 
+enter the current year (e.g. 2019) in the below box, 
+enter the sum of the two numbers, and 
+<b>press Go! button.</b>
+<br>
+</td></tr>
+
+<form action="fileupload.php" onsubmit="return gatekeeper();" method="post">
+  <tr>
+    <td width=220>Name</td>
+    <td><input type="text" placeholder="name" size=60 name="myname" align="left"/></td>
+  </tr>
+  <tr>
+    <td>Institution</td>
+    <td><input type="text" placeholder="institution" size=60 name="mycompany" align="left"/></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><input type="email" value="" placeholder="e-mail address" size=60 name="myemail" align="left"/> </td>
+  </tr>
+  <tr>
+    <td>Your personal key:</td>
+    <td><input type="text" placeholder="personal key from email" name="MYKEY" size=60/></td>
+  </tr>
+  <tr>
+    <td>Current year:</td>
+    <td><input type="text" placeholder="current year" name="MYCHECKS" size=60/></td>
+  </tr>
+  <tr>
+    <td>Answer of 21+15:</td>
+    <td><input type="text" placeholder="21+15=?" name="MYCHECKSNUM" size=60/></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;</td>
+  <td><input type="image" src="go.jpg" alt="Go!" width=83 height=28/></td>
+  </tr>
+</form>
+</td></tr></table>
+</center>
+
+</td></tr>
+</table>
+
+<h3>
+</h3>
+
+<?php
+include 'footer.html'
+?>
+
+</td></tr></table></center>
+</body>
+</html>
